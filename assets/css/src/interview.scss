@@ -1,0 +1,82 @@
+.interview__mv {
+    padding-top: 233px;
+    background: url('../../images/interview/interview_bg.jpg') no-repeat top center / cover;
+}
+
+.interview__intro {
+    padding: 80px 0;
+    width: 100vw; // ビューポートいっぱいに
+    margin-left: calc(50% - 50vw);
+    box-sizing: border-box;
+    padding-left: 18rem;
+    &-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &-left {
+        width: 50%;
+
+        strong {
+            font-size: 5.6rem;
+            font-weight: bold;
+            line-height: 1;
+            display: block;
+            margin-bottom: 36px;
+            color: #CD362E;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 120px;
+            letter-spacing: 0.1em;
+            color: #CD362E;
+        }
+
+        .interview__scroll {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #CD362E;
+            font-size: 24px;
+            img {
+                width: 16px;
+                height: auto;
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+
+            strong {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &-right {
+        width: 50%;
+        aspect-ratio: 72 / 55; // ✅ アスペクト比 72:55 に変更
+        background-size: cover;
+        background-position: center;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            aspect-ratio: 3 / 2; // モバイル時はお好みで調整
+        }
+    }
+}

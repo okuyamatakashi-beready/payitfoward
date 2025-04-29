@@ -1,0 +1,41 @@
+{
+  "name": "tophair-official",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "scripts": {
+    "build": "npm-run-all build:scss build:css",
+
+    "build:scss": "node tools/build-scss.js",
+    "build:css":  "node tools/build-postcss.js",
+
+    "dev": "npm-run-all --parallel watch:scss watch:css",
+
+    "watch:scss": "chokidar 'assets/css/src/**/*.scss' -i '**/_*.scss' -c 'node tools/build-scss.js'",
+    "watch:css":  "chokidar 'assets/css/src/**/*.css'  -c 'node tools/build-postcss.js'"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://okuyamatakashi-beready@github.com/okuyamatakashi-beready/tophair-official.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okuyamatakashi-beready/tophair-official/issues"
+  },
+  "homepage": "https://github.com/okuyamatakashi-beready/tophair-official#readme",
+
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "chokidar-cli": "^3.0.0",
+    "cssnano": "^7.0.6",
+    "fast-glob": "^3.3.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.68.0",
+    "tailwindcss": "^3.4.16"
+  }
+
+}

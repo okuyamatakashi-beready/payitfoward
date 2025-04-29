@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Recruit  page  (page-recruit.php 専用)
+   ========================================================================== */
+
+/* カラ―変数（お好みで共通 variables.scss に移動してください） */
+$primary: #CD362E;
+$primary-100: rgba(#cd362e, .1); // テーブルの罫線など
+$bg-flow: #faf8ea;
+
+.container {
+    width: 92%;
+    max-width: 100%;
+}
+
+/* ---------- 1. Hero ---------- */
+.recruit__hero {
+    padding: 80px 0 40px;
+    text-align: center;
+
+    &-title {
+        font-size: clamp(2.4rem, 5vw, 5.6rem);
+        font-weight: 600;
+        font-style: italic;
+        letter-spacing: .15em;
+        color: $primary;
+    }
+
+    &-sub {
+        margin-top: 16px;
+        font-size: 0.875rem;
+        letter-spacing: .15em;
+        color: #888;
+    }
+}
+
+/* ---------- 2. KV ---------- */
+.recruit__kv {
+    width: 100%;
+    height: 550px;
+    background: url('../../images/recruit/kv.jpg') no-repeat center / cover;
+
+    @media (min-width: 1024px) {
+        height: 520px;
+    }
+}
+
+/* ---------- 3. ラベル ---------- */
+.recruit__label {
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 18px;
+    letter-spacing: .15em;
+    color: $primary;
+
+    span {
+        border-left: 1px solid $primary;
+        padding: 0 25px;
+
+        &:last-of-type {
+            border-right: 1px solid $primary;
+        }
+    }
+}
+
+/* 4. 募集要項テーブル */
+.recruit__table {
+    max-width: 1050px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 56px 24px;
+
+    /* ---------- Grid 2col ---------- */
+    dl {
+        display: grid;
+        grid-template-columns: 180px 1fr; // 左 dt 180px
+        column-gap: 0rem;
+        font-size: 18px;
+
+        dt,
+        dd {
+            padding: 24px 0;
+            border-bottom: 1px solid $primary;
+            line-height: 1.8;
+            font-size: 18px;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        dt {
+            font-weight: 400;
+            color: $primary;
+            letter-spacing: 0.2em;
+        }
+
+        dd {
+            font-size: 18px;
+            color: $primary;
+            letter-spacing: 0.05em;
+
+            strong {
+                font-weight: 400;
+            }
+
+            .indent {
+                margin-left: 2em;
+            }
+
+            // ＜月収イメージ などをインデント
+        }
+
+        /* スマホは縦並び */
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+
+            dt {
+                padding-bottom: 8px;
+            }
+
+            dd {
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+/* ---------- 5. デコ用イメージ (chair など) ---------- */
+
+
+/* ==========================================================================
+   6. Flow Section
+   ========================================================================== */
+
+$flow-bg : #faf8ea;
+$primary : #CD362E;
+
+/* ---------- レイアウト ---------- */
+.recruit__flow {
+    padding: 0px 0 80px;
+    background: $flow-bg;
+    min-width: 1280;
+    margin-top: 120px;
+
+    .recruit__flow-grid {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0px;
+
+        /* SP では右カラムを先頭へ */
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+
+            .flow-right {
+                order: -1;
+            }
+
+            gap: 40px;
+        }
+    }
+}
+
+/* ---------- 右カラム ---------- */
+.flow-right {
+    text-align: left;
+    padding-left: 40rem;
+    flex-wrap: wrap;
+
+    .flow-quote {
+        letter-spacing: .04em;
+        color: $primary;
+        margin-bottom: 20px;
+        font-size: 21px;
+
+        @media (max-width: 768px) {
+            text-align: left;
+            font-size: 12px;
+            padding-left: 20px;
+        }
+    }
+
+    .flow-girls img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* ---------- 左カラム ---------- */
+.flow-left {
+    padding-left: 18rem;
+    padding-top: 42.5rem;
+
+    /* 椅子写真 */
+    .flow-chair {
+        top: 0;
+        left: 0;
+        width: 90%;
+    }
+
+    .flow-chair img {
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 36px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        // SP では非表示
+    }
+
+    /* タイトル */
+    .flow-title {
+        font-size: clamp(32px, 4vw, 80px);
+        color: $primary;
+        letter-spacing: .06em;
+    }
+
+    .flow-caption {
+        font-size: 16px;
+        letter-spacing: .15em;
+        color: $primary;
+        margin-bottom: 56px;
+    }
+
+    /* ステップ */
+    .flow-steps {
+        position: relative;
+        padding-left: 40px;
+        padding-bottom: 80px;
+
+        /* 縦ライン */
+        &::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            bottom: 0;
+            width: 2px;
+            background: $primary;
+        }
+
+        li {
+            margin-bottom: 56px;
+
+            .flex {
+                align-items: center;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .num {
+                display: block;
+                color: $primary;
+                margin-bottom: 8px;
+                font-size: 32px;
+                line-height: 35px;
+                margin-right: 20px;
+            }
+
+            h3 {
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 1;
+                color: $primary;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 16px;
+                color: $primary;
+                line-height: 1.8;
+            }
+        }
+    }
+}
+
+/* ---------- 7. 3列ギャラリー ---------- */
+/* 7. gallery swiper */
+.recruit__gallery {
+    @apply w-full; // Tailwind がある場合
+
+    .swiper-slide img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+    }
+
+    /* スマホ高さ */
+    @media (max-width: 768px) {
+        .swiper-slide img {
+            height: 260px;
+        }
+    }
+
+    /* ドット位置 */
+    .swiper-pagination {
+        @apply mt-4 text-center;
+
+        .swiper-pagination-bullet {
+            background: $primary-100;
+
+            &.swiper-pagination-bullet-active {
+                background: $primary;
+            }
+        }
+    }
+}
+
+/* ---------- 8. ENTRY CTA ---------- */
+.recruit__entry {
+    padding: 96px 0;
+
+    &-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+
+    &-copy {
+        h2 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            font-style: italic;
+            color: $primary;
+            margin-bottom: 16px;
+            letter-spacing: .12em;
+        }
+
+        p {
+            font-size: 0.875rem;
+            line-height: 1.9;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 36px;
+            font-size: 0.9rem;
+            border-radius: 9999px;
+            background: $primary;
+            color: #fff;
+            transition: background .3s;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                background: darken($primary, 8%);
+            }
+        }
+    }
+
+    &-img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: url('../../images/recruit/entry.jpg') no-repeat center / cover;
+
+        @media (max-width: 768px) {
+            margin-top: 40px;
+        }
+    }
+}
