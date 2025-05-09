@@ -5,8 +5,42 @@
 
     <div id="mv-catch" class="relative">
         <section id="mv" class="mv">
+
+            <div class="mv__marquee absolute inset-0 flex">
+
+                <!-- track A -->
+                <div class="mv__track flex shrink-0">
+                    <?php
+                    $imgs = [
+                        'mv_01.jpg',
+                        'mv_02.jpg',
+                        'mv_03.jpg',
+                        'mv_04.jpg',
+                        'mv_05.jpg',
+                        'mv_06.jpg',
+                        'mv_07.jpg'
+                    ];
+                    foreach ($imgs as $file):
+                        ?>
+                        <div class="mv__cell">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/<?php echo $file; ?>"
+                                alt="">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- track B（複製用） -->
+                <div class="mv__track flex shrink-0" aria-hidden="true">
+                    <?php foreach ($imgs as $file): ?>
+                        <div class="mv__cell">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/<?php echo $file; ?>"
+                                alt="">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
             <div class="mv__inner">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/top/welcome.svg" alt="" class="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/welcome.svg" alt="" class="">
                 <h1 class="mv__title">
                     <span>Pay it<br> Forward</span>
                     <span class="recruit">Recruit 2025</span>
@@ -17,22 +51,24 @@
         <section id="about" class="about relative">
             <div class="about__inner">
                 <div class="about__left">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/challenge.svg" alt="Challenge" class="about__icon" alt="世界を変えるのは一歩踏み出したチャレンジャーたち。">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/challenge.svg"
+                        alt="Challenge" class="about__icon" alt="世界を変えるのは一歩踏み出したチャレンジャーたち。">
                     <div class="about__text">
                         <p>
-                        自分の人生を豊かにするためには、<br>
-                        勇気を出して一歩を踏み出せ。<br>
-                        そして、その一歩は<br>
-                        別の誰かも幸せにするんだ。<br>
-                        ペイフォワードという場所は<br>
-                        そんなチャレンジャーたちの夢を叶えて<br>
-                        一緒にこれからもワクワクしていきたい。<br>
-                        みんなの挑戦を待っている。
+                            自分の人生を豊かにするためには、<br>
+                            勇気を出して一歩を踏み出せ。<br>
+                            そして、その一歩は<br>
+                            別の誰かも幸せにするんだ。<br>
+                            ペイフォワードという場所は<br>
+                            そんなチャレンジャーたちの夢を叶えて<br>
+                            一緒にこれからもワクワクしていきたい。<br>
+                            みんなの挑戦を待っている。
                         </p>
                     </div>
                 </div>
                 <div class="about__right">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/about-img.png" alt="About Image" class="about__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/about-img.png"
+                        alt="About Image" class="about__image">
                 </div>
             </div>
         </section>
@@ -41,14 +77,15 @@
 
     <div class="scroll-img swiper">
         <div class="swiper-wrapper">
-            <?php for ($i = 0; $i < 10; $i++) : // 無限に見せるために複数枚ループ ?>
+            <?php for ($i = 0; $i < 10; $i++): // 無限に見せるために複数枚ループ ?>
                 <div class="swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/scroll.png" alt="Scroll Image" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/scroll.png"
+                        alt="Scroll Image" />
                 </div>
             <?php endfor; ?>
         </div>
     </div>
-    
+
     <?php get_template_part('components/oursalon'); ?>
 
 
@@ -73,20 +110,24 @@
                         'post_type' => 'post', // 通常の投稿
                         'posts_per_page' => 5
                     ]);
-                    if ($news_query->have_posts()) :
-                        while ($news_query->have_posts()) : $news_query->the_post();
-                    ?>
+                    if ($news_query->have_posts()):
+                        while ($news_query->have_posts()):
+                            $news_query->the_post();
+                            ?>
                             <div class="news-slide swiper-slide">
                                 <a href="<?php the_permalink(); ?>" class="news-card">
                                     <p class="news-date roki"><?php echo get_the_date('Y.m.d'); ?></p>
-                                    <div class="news-thumb" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>');"></div>
+                                    <div class="news-thumb"
+                                        style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>');">
+                                    </div>
                                     <h3 class="news-title"><?php the_title(); ?></h3>
                                     <p class="news-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
 
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/news-arrow.svg" alt="" />
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/news-arrow.svg"
+                                        alt="" />
                                 </a>
                             </div>
-                    <?php endwhile;
+                        <?php endwhile;
                         wp_reset_postdata();
                     endif;
                     ?>
@@ -112,7 +153,3 @@
 </main>
 
 <?php get_template_part('templates/footer'); ?>
-
-
-
-

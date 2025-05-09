@@ -16,18 +16,24 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
-    overflow: auto!important;
+    overflow: auto !important;
 }
-.fp-scrollable .fp-section:not(.fp-auto-height):not([data-percentage]), .fp-scrollable .fp-slide:not(.fp-auto-height):not([data-percentage]), .fp-scrollable.fp-responsive .fp-is-overflow.fp-section:not(.fp-auto-height):not([data-percentage]) {
+
+.fp-scrollable .fp-section:not(.fp-auto-height):not([data-percentage]),
+.fp-scrollable .fp-slide:not(.fp-auto-height):not([data-percentage]),
+.fp-scrollable.fp-responsive .fp-is-overflow.fp-section:not(.fp-auto-height):not([data-percentage]) {
     min-height: 1px;
 }
+
 .text-split span {
     display: inline-block;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
+
 .text-split.active span {
     opacity: 1;
     transform: translateY(0);
@@ -35,7 +41,8 @@ body {
 
 #header-trigger {
     position: relative;
-    top: 80px; /* 🔥 `header` の下に配置（調整可能） */
+    top: 80px;
+    /* 🔥 `header` の下に配置（調整可能） */
     left: 0;
     width: 100%;
     height: 10px;
@@ -46,18 +53,22 @@ body {
 .container_max {
     @apply w-[95%] mx-auto;
 }
+
 .bg {
     @apply bg-center bg-no-repeat bg-cover;
 }
+
 .button__type--a {
     font-size: 12px;
     color: #000;
     width: 147px;
     display: block;
     font-family: "Noto Sans JP", sans-serif;
+
     @media screen and (max-width: 768px) {
         width: 107px;
     }
+
     div {
         position: relative;
         padding-bottom: 10px;
@@ -69,10 +80,13 @@ body {
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 50%; /* 初期状態は0% */
+        width: 50%;
+        /* 初期状態は0% */
         height: 1px;
         background-color: #000;
-        transition: width 0.3s ease-in-out; /* 🔥 横に伸びるアニメーション */
+        transition: width 0.3s ease-in-out;
+
+        /* 🔥 横に伸びるアニメーション */
         @media screen and (max-width: 768px) {
             width: 100%;
         }
@@ -89,7 +103,9 @@ body {
         bottom: 4px;
         display: block;
         background-color: #000;
-        transition: right 0.3s ease-in-out, width 0.3s ease-in-out; /* 🔥 矢印も移動しながら伸びる */
+        transition: right 0.3s ease-in-out, width 0.3s ease-in-out;
+
+        /* 🔥 矢印も移動しながら伸びる */
         @media screen and (max-width: 768px) {
             right: -2px;
         }
@@ -97,17 +113,22 @@ body {
 
     /* ✅ Hover したときにボーダーを横に伸ばす */
     &:hover div::before {
-        width: 100%; /* 🔥 100% に広げる */
+        width: 100%;
+        /* 🔥 100% に広げる */
     }
 
     /* ✅ Hover したときに矢印を動かす */
     &:hover div::after {
-        right: -2px; /* 🔥 ちょっと右に動かす */
-        width: 12px; /* 🔥 矢印を伸ばす */
+        right: -2px;
+        /* 🔥 ちょっと右に動かす */
+        width: 12px;
+        /* 🔥 矢印を伸ばす */
     }
 }
+
 br.sp {
     display: none;
+
     @media screen and (max-width: 768px) {
         display: block;
     }
@@ -116,25 +137,31 @@ br.sp {
 .sec__ttl--big {
     @apply text-center text-black text-[5rem] font-normal;
     letter-spacing: 0.15em;
+
     @media screen and (max-width: 768px) {
         font-size: 30px;
+
         span {
             font-size: 30px;
         }
-        
+
     }
 }
+
 .vertical__center {
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     position: absolute;
 }
+
 .fp-watermark {
     display: none;
 }
+
 .salon__menu--list {
-    @apply  rounded-full text-black text-center text-1 py-1 border-solid border border-black block w-full;
+    @apply rounded-full text-black text-center text-1 py-1 border-solid border border-black block w-full;
+
     @media screen and (max-width: 768px) {
         font-size: 10px;
     }
@@ -143,24 +170,30 @@ br.sp {
 #mv {
     @media screen and (max-width: 768px) {
         height: calc(100vh - 71px);
+
         video {
             height: calc(100vh - 71px);
             min-height: 0;
         }
     }
 }
+
 .pc {
     display: block;
+
     @media screen and (max-width: 768px) {
         display: none;
     }
 }
+
 .sp {
     display: none;
+
     @media screen and (max-width: 768px) {
         display: block;
     }
 }
+
 .roki {
     font-family: "Rokkitt", serif;
     font-weight: bold;
@@ -178,9 +211,11 @@ br.sp {
     align-items: center;
     color: #cd362e;
     line-height: 1;
+
     p {
         line-height: 1;
         align-items: center;
+
         span {
             color: #fff;
             border-radius: 50%;
@@ -192,6 +227,7 @@ br.sp {
             margin-right: 16px;
         }
     }
+
     small {
         font-family: "Lexend", sans-serif;
         font-size: 16px;
@@ -241,6 +277,7 @@ br.sp {
         width: 320px;
         transition: background-color 0.3s;
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.16);
+
         img {
             width: 25px;
             height: auto;
@@ -291,23 +328,27 @@ br.sp {
     アニメーション
 -------------------------*/
 
-.fadeUpTrigger{
+.fadeUpTrigger {
     opacity: 0;
 }
-.box{
-	opacity: 0;
+
+.box {
+    opacity: 0;
 }
+
 .fadeUp {
     animation-name: fadeUpAnime;
-    animation-duration:1.5s;
-    animation-fill-mode:forwards;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
     opacity: 0;
 }
-@keyframes fadeUpAnime{
+
+@keyframes fadeUpAnime {
     from {
         opacity: 0;
         transform: translateY(100px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -329,38 +370,111 @@ br.sp {
 
     }
 }
+$primary : #b43a32;
+$mv-speed: 120s; 
 .mv {
     position: relative;
     width: 100%;
     height: 100vh; // デバイスの高さ
-    background: url('../../images/top/mv.png') no-repeat center center / cover; // 背景画像パスを適宜修正
+    // background: url('../../images/top/mv.png') no-repeat center center / cover; // 背景画像パスを適宜修正
+
+    /* 1セル共通 */
+    .mv__cell {
+        height: auto;
+        
+
+        @media (min-width: 1024px) {
+            height: 18vw;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            // object-fit: cover;
+            // object-position: center;
+        }
+        &:nth-of-type(1) {
+            transform:translateY(13%);
+            width:22vw;
+            height:auto;
+        }
+        &:nth-of-type(2) {
+            transform:translateX(-50%)translateY(75%);
+            width:27vw;
+            height:auto;
+        }
+        &:nth-of-type(3) {
+            transform:translateX(-80%)translateY(-8%);
+            width:24vw;
+            height:auto;
+        }
+        &:nth-of-type(4) {
+            transform:translateX(-90%)translateY(28%);
+            width:30vw;
+            height:auto;
+        }
+        &:nth-of-type(6) {
+            transform:translateX(-110%)translateY(67%);
+            width:20vw;
+            height:auto;
+        }
+        &:nth-of-type(7) {
+            transform:translateX(-200%)translateY(13%);
+            width:20vw;
+            height:auto;
+        }
+    }
+
+    /* 走査トラック */
+    .mv__track {
+        animation: scrollX $mv-speed linear infinite;
+    }
+
+    /* アニメーション */
+    @keyframes scrollX {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+
+        // １トラック幅ぶん左へ
+    }
+
     &__inner {
         position: absolute;
         top: 50%;
         left: 20rem; // 中央の左側に寄せる
         transform: translateY(-50%);
         color: #fff;
+
         img {
             width: 100%;
             margin-bottom: 4rem;
         }
     }
+
     &__title {
         font-size: 7.8rem;
         font-weight: bold;
         line-height: 1.4;
         letter-spacing: 0.06em;
         color: #CD362E;
+
         span {
             display: block;
             font-family: "Gloock", serif;
             font-weight: normal;
             text-decoration: underline;
             text-decoration-thickness: 1px;
-            text-underline-offset:0.2em;
+            text-underline-offset: 0.2em;
+
             &:first-child {
                 margin-bottom: 1rem;
             }
+
             &.recruit {
                 font-family: "Rokkitt", serif;
                 font-weight: bold;
@@ -386,25 +500,28 @@ br.sp {
     padding: 0 0 12rem 0;
     position: relative;
     z-index: 10;
+
     &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 90%;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0 2rem;
-    &::before {
-        content: "";
-        left: 0;
-        width: 56px;
-        height: 206px;
-        background-color: #CD362E;
-        display: block;
-        position: absolute;
-        top: 15%;
-    }
-    @media screen and (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        &::before {
+            content: "";
+            left: 0;
+            width: 56px;
+            height: 206px;
+            background-color: #CD362E;
+            display: block;
+            position: absolute;
+            top: 15%;
+        }
+
+        @media screen and (max-width: 768px) {
             flex-direction: column;
         }
     }
@@ -414,11 +531,13 @@ br.sp {
         margin-top: 16rem;
         box-sizing: border-box;
         padding-left: 15rem;
+
         img {
             width: 80%;
             margin-bottom: 5rem;
         }
     }
+
     &__right {
         width: 45%;
 
@@ -457,6 +576,7 @@ br.sp {
     border-top: 2px solid #CD362E;
     border-bottom: 2px solid #CD362E;
     padding: 10px 0;
+
     .swiper-wrapper {
         display: flex;
         align-items: center;
@@ -466,6 +586,7 @@ br.sp {
     .swiper-slide {
         width: auto; // 横並びに連続表示
         flex-shrink: 0;
+
         img {
             display: block;
             width: auto;
@@ -481,21 +602,26 @@ br.sp {
 .our-salon {
     padding: 80px 0;
     background-color: #FFFBE8;
+
     &.bg-white {
         background-color: #fff;
     }
+
     .container {
         width: 1078px;
         max-width: 100%;
     }
+
     .section-title {
         color: #cd362e;
         padding-bottom: 8px;
         border-bottom: 2px solid #cd362e;
+
         small {
             font-style: normal;
         }
     }
+
     .section-label {
         font-size: 14px;
         font-weight: bold;
@@ -504,6 +630,7 @@ br.sp {
         margin-bottom: 10px;
         text-align: center;
     }
+
     .salon-list {
         display: flex;
         flex-wrap: wrap;
@@ -520,14 +647,17 @@ br.sp {
         border-bottom: 2px solid #cd362e;
         margin-bottom: 40px;
         padding-top: 10px;
+
         &:nth-of-type(2n-1) {
             border-right: 2px solid #cd362e;
             padding-right: 30px;
         }
+
         &:nth-of-type(2n) {
             border-right: none;
             padding-left: 30px;
         }
+
         .thumbnail {
             width: 100%;
             padding-top: 250px; // アスペクト比維持
@@ -565,8 +695,7 @@ br.sp {
                     margin-right: 30px;
                 }
 
-                .instagram {
-                }
+                .instagram {}
             }
 
             .map-link {
@@ -579,6 +708,7 @@ br.sp {
                     align-items: center;
                     font-family: "Lexend", sans-serif;
                     font-weight: 600;
+
                     .map-icon {
                         margin-left: 5px;
                         font-size: 16px;
@@ -608,6 +738,7 @@ br.sp {
     position: relative;
     border-top: 10px solid #cd362e;
     padding-top: 40px;
+
     span.ttl {
         width: 411px;
         height: 72px;
@@ -623,10 +754,12 @@ br.sp {
         position: absolute;
         top: -72px
     }
+
     .container {
         width: 91%;
         max-width: 100%;
     }
+
     .cards {
         display: flex;
         flex-wrap: wrap;
@@ -641,117 +774,146 @@ br.sp {
         position: relative;
         padding-bottom: 10rem;
         margin-bottom: 0.5%;
+
         &::before {
             content: "";
             width: 180px;
             height: 40px;
             background: #fff;
             color: white;
-            clip-path: polygon(0% 0,100% 0,100% 100%,15% 100%);
+            clip-path: polygon(0% 0, 100% 0, 100% 100%, 15% 100%);
             position: absolute;
             top: -1px;
             right: -1px;
             z-index: 10;
         }
+
         &.staff01 {
             background-color: #B4979C;
+
             .card__img {
                 background: url('../../images/staff/staff01.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #B4979C;
                 }
             }
-            
+
         }
+
         &.staff02 {
             background-color: #C0AC8C;
+
             .card__img {
                 background: url('../../images/staff/staff02.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #C0AC8C;
                 }
             }
-            
+
         }
+
         &.staff03 {
             background-color: #374270;
+
             .card__img {
                 background: url('../../images/staff/staff03.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #374270;
                 }
             }
-            
+
         }
+
         &.staff04 {
             background-color: #EB6F26;
+
             .card__img {
                 background: url('../../images/staff/staff04.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #EB6F26;
                 }
             }
-            
+
         }
+
         &.staff05 {
             background-color: #FDBBBF;
+
             .card__img {
                 background: url('../../images/staff/staff05.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #FDBBBF;
                 }
             }
-            
+
         }
+
         &.staff06 {
             background-color: #EB8FB6;
+
             .card__img {
                 background: url('../../images/staff/staff06.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #EB8FB6;
                 }
             }
-            
+
         }
+
         &.staff07 {
             background-color: #5A766A;
+
             .card__img {
                 background: url('../../images/staff/staff07.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #5A766A;
                 }
             }
-            
+
         }
+
         &.staff08 {
             background-color: #C1B3B0;
+
             .card__img {
                 background: url('../../images/staff/staff08.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #C1B3B0;
                 }
             }
-            
+
         }
+
         &.staff09 {
             background-color: #9A979E;
+
             .card__img {
                 background: url('../../images/staff/staff09.png') no-repeat center center / cover;
                 width: 90%;
+
                 span.card__catch {
                     color: #9A979E;
                 }
             }
-            
+
         }
+
         .card__img {
             position: relative;
             width: 100%;
@@ -779,15 +941,18 @@ br.sp {
             line-height: 1;
             margin-bottom: 15px;
         }
+
         .flex {
             width: 100%;
             align-items: flex-end;
             margin-top: 50px;
             margin-bottom: 20px;
+
             img {
                 width: 50%;
             }
         }
+
         .card__handwrite {
             width: 60px;
             height: auto;
@@ -816,6 +981,7 @@ br.sp {
             color: #fff;
             line-height: 1.2em;
         }
+
         .card__arrow {
             position: absolute;
             right: 10%;
@@ -832,6 +998,7 @@ br.sp {
 .welcome {
     width: 100%;
     background: url('../../images/top/welcome.jpg') no-repeat center center / cover;
+
     p {
         text-align: center;
         color: #fff;
@@ -848,21 +1015,25 @@ br.sp {
     background-color: #A5CCE0;
     padding-top: 40px;
     padding-bottom: 63px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+
     .container {
         width: 90%;
         max-width: 1200px;
         border-bottom: 2px solid #fff;
+
         h2 {
             color: #fff;
             border-bottom: 2px solid #fff;
             margin-bottom: 20px;
+
             p {
                 text-align: left;
                 padding-bottom: 24px;
             }
         }
     }
+
     .news-swiper {
         position: relative;
         left: 50%;
@@ -870,16 +1041,16 @@ br.sp {
         width: 100vw;
         margin-left: max((100vw - 1200px) / 2, 20px); // ← containerのpaddingと一致させる
         box-sizing: border-box;
-        
+
         .swiper-wrapper {
             padding-right: 20px; // 右のマージン調整（任意）
         }
+
         .swiper-slide {
             width: 33%; // スライド幅
         }
-        .news-slide {
 
-        }
+        .news-slide {}
 
         .news-card {
             display: block;
@@ -890,7 +1061,7 @@ br.sp {
             transition: all 0.3s ease;
 
             &:hover {
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
 
             .news-date {
@@ -918,6 +1089,7 @@ br.sp {
                 font-size: 12px;
                 color: #fff;
             }
+
             img {
                 position: absolute;
                 bottom: 0;
@@ -940,11 +1112,13 @@ br.sp {
     background-color: #FEE4E5;
     padding-top: 40px;
     padding-bottom: 64px;
+
     .container {
         width: 90%;
         max-width: 1200px;
         border-bottom: 2px solid #39598C;
         padding-bottom: 40px;
+
         .section-title {
             font-size: 8rem;
             text-align: center;
@@ -958,10 +1132,12 @@ br.sp {
             line-height: 1.5em;
             position: relative;
             border-bottom: 2px solid #39598C;
+
             p {
                 line-height: 1.1em;
                 align-items: center;
                 text-indent: -1em;
+
                 span {
                     color: #39598C;
                     border-radius: 0%;
@@ -973,6 +1149,7 @@ br.sp {
                     font-style: normal;
                     margin-right: 16px;
                 }
+
                 small {
                     position: absolute;
                     top: 24%;
@@ -980,6 +1157,7 @@ br.sp {
                     font-style: normal;
                     font-size: 1.4rem;
                 }
+
                 img {
                     position: absolute;
                     left: -1%;
@@ -987,6 +1165,7 @@ br.sp {
                     width: 5%;
                 }
             }
+
             small {
                 font-family: "Lexend", sans-serif;
                 font-size: 16px;
@@ -1013,9 +1192,11 @@ br.sp {
         max-width: 400px;
         text-align: left;
         color: #39598C;
+
         &__profile {
             font-size: 16px;
         }
+
         &__image {
             width: 100%;
             padding-top: 120%;
@@ -1037,6 +1218,7 @@ br.sp {
             margin-bottom: 0.8rem;
             color: #39598C;
             font-family: "Lexend", sans-serif;
+
             span {
                 font-size: 10px;
             }
@@ -1048,10 +1230,12 @@ br.sp {
             color: #39598C;
             margin-bottom: 20px;
         }
+
         &__insta {
             width: 35px;
             margin-bottom: 40px;
         }
+
         &__dm {
             width: 100%;
         }
@@ -1062,10 +1246,12 @@ br.sp {
         border-left: 2px solid #39598C;
         box-sizing: border-box;
         padding-left: 5rem;
+
         .qa-item {
             border-bottom: 1px solid #39598C;
             padding: 5rem 0;
             color: #39598C;
+
             dt {
                 cursor: pointer;
                 display: flex;
@@ -1117,6 +1303,7 @@ br.sp {
                 display: block;
             }
         }
+
         a.all {
             color: #39598C;
             font-size: 24px;
@@ -1140,6 +1327,7 @@ figure.challengers {
 #data-recruit {
     background: #FFFBE8;
     padding-bottom: 115px;
+
     .data-recruit__inner {
         display: flex;
         gap: 3rem;
@@ -1169,6 +1357,7 @@ figure.challengers {
             gap: 1.5rem;
             width: 80%;
             margin-top: 30px;
+
             li {
                 a {
                     display: flex;
@@ -1179,6 +1368,7 @@ figure.challengers {
                     color: #CD362E;
                     transition: background-color 0.3s;
                     border-bottom: 2px solid #cd362e;
+
                     &:hover {
                         background-color: #e0e0e0;
                     }
@@ -1233,6 +1423,7 @@ figure.challengers {
 
 #entry {
     position: relative;
+
     span.ttl {
         width: 411px;
         height: 72px;
@@ -1248,31 +1439,37 @@ figure.challengers {
         position: absolute;
         top: -72px
     }
+
     .entry__inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 2rem;
         align-items: stretch;
+
         @media screen and (max-width: 768px) {
             flex-direction: column;
         }
     }
+
     a.entry__link {
         width: 50%;
         position: relative;
+
         img {
             position: absolute;
             right: 10rem;
             bottom: 10rem;
         }
     }
+
     .entry__text {
         width: 100%;
         box-sizing: border-box;
         height: 100%;
         padding-left: 9rem;
         padding-bottom: 7rem;
+
         @media screen and (max-width: 768px) {
             width: 100%;
             text-align: center;
@@ -1319,6 +1516,7 @@ figure.challengers {
         background-size: 100%;
         background-position: center;
         min-height: 640px;
+
         @media screen and (max-width: 768px) {
             width: 100%;
             height: 300px;
@@ -1335,12 +1533,14 @@ figure.challengers {
     color: #fff;
     padding: 60px 0;
     position: relative;
+
     img.pageTop {
         position: absolute;
         bottom: 60px;
         right: 60px;
         width: 50px;
     }
+
     .footer__inner {
         display: flex;
         justify-content: space-between;
@@ -1353,8 +1553,9 @@ figure.challengers {
     .footer__left {
         width: 48%;
 
-        h3 {        
-            margin-bottom: 11rem;    
+        h3 {
+            margin-bottom: 11rem;
+
             p {
                 font-size: 8rem;
                 line-height: 1.2;
@@ -1387,6 +1588,7 @@ figure.challengers {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0px;
+
                 li {
                     width: 50%;
                     position: relative;
@@ -1398,6 +1600,7 @@ figure.challengers {
                     text-decoration: none;
                     font-size: 18px;
                     font-weight: 600;
+
                     span {
                         font-family: "Noto Sans JP", sans-serif;
                         font-weight: 400;
@@ -1422,15 +1625,18 @@ figure.challengers {
                     font-size: 21px;
                     text-align: center;
                     margin-bottom: 6rem;
+
                     img {
                         padding-left: 30px;
                     }
                 }
+
                 &.policy-btn {
                     span {
                         font-size: 14px;
                         text-decoration: underline;
                     }
+
                     img {
                         margin-right: 8px;
                     }
@@ -1449,6 +1655,7 @@ figure.challengers {
         border-left: 1px solid #fff;
         box-sizing: border-box;
         padding-left: 24px;
+
         .salon__list {
             display: flex;
             flex-direction: column;
@@ -1460,6 +1667,7 @@ figure.challengers {
                 padding-left: 20px;
                 padding-bottom: 25px;
                 border-bottom: 1px solid #fff;
+
                 .salon__img {
                     width: 193px;
                     height: 130px;
@@ -1485,6 +1693,7 @@ figure.challengers {
                             color: #fff;
                             text-decoration: none;
                             align-items: center;
+
                             img {
                                 padding-right: 5px;
                             }
@@ -1508,6 +1717,7 @@ figure.challengers {
                 color: #fff;
                 text-decoration: none;
                 font-size: 13px;
+
                 img {
                     padding-right: 5px;
                 }
@@ -1516,6 +1726,7 @@ figure.challengers {
     }
 
     @media screen and (max-width: 768px) {
+
         .footer__left,
         .footer__right {
             width: 100%;
